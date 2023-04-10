@@ -7,8 +7,8 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className='bg-[#16161a] min-h-screen h-full flex'>
-      <div className='w-[240px] h-screen'>
+    <div className='min-h-screen h-full flex'>
+      <div className='w-[240px] min-h-screen h-full'>
         <Sidebar />
       </div>
       <div className='w-[calc(100vw-240px)] h-screen'>
