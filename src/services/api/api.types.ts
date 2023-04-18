@@ -1,4 +1,8 @@
-import { GeneralApiProblem } from "./api-problem"
-import { Character } from "@stores/character/types"
+// import { GeneralApiProblem } from './api-problem';
+// // import { Character } from "@stores/character/types"
 
-export type GetCharactersResult = { kind: "ok"; data: Character[] } | GeneralApiProblem
+// export type GetCharactersResult =
+//   | { kind: 'ok'; data: Character[] }
+//   | GeneralApiProblem;
+
+export {};
