@@ -1,4 +1,4 @@
-const tabConfig = [
+export const tabConfig = [
   {
     name: 'Tokens',
     value: 'token',
@@ -12,5 +12,3 @@ const tabConfig = [
     value: 'history',
   },
 ];
-
-export default tabConfig;

@@ -1,21 +1,26 @@
-import Container from './Container';
-import Sidebar from './Sidebar';
+import { useState } from 'react';
+import { Container } from './Container';
+import { Sidebar, AccountSidebar } from './Sidebar';
 
 type LayoutProps = {
   children: React.ReactNode;
 };
 
-const Layout = ({ children }: LayoutProps) => {
+export type OpenType = null | 'sidebar' | 'account' | 'search';
+
+export const Layout = ({ children }: LayoutProps) => {
+  const [open, setOpen] = useState<OpenType>(null);
+
+  const handleOpen = (value: OpenType) => setOpen(value);
+
   return (
-    <div className='min-h-screen h-full flex'>
-      <div className='w-[240px] min-h-screen h-full'>
-        <Sidebar />
-      </div>
-      <div className='w-[calc(100vw-240px)] h-screen'>
-        <Container>{children}</Container>
-      </div>
-    </div>
+    <>
+      <AccountSidebar open={open} handleOpen={handleOpen} />
+      <Sidebar open={open} handleOpen={handleOpen} />
+
+      <Container open={open} handleOpen={handleOpen}>
+        {children}
+      </Container>
+    </>
   );
 };
-
-export default Layout;
